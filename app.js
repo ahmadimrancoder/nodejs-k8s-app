@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <div class="card">
-        <h1>Hello from Kubernetes!</h1>
+        <h1>Hello from Kubernetes! - CI/CD Works!</h1>
         <p>Timestamp: <span>${new Date().toISOString()}</span></p>
         <p>Container ID: <span>${os.hostname()}</span></p>
         <p>Visitor Count: <span>${visitorCount}</span></p>
