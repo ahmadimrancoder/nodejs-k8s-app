@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      imagePullSecrets:
+      - name: ecr-secret
+      containers:
+      - name: nodejs-app
+        image: 329068432478.dkr.ecr.us-east-1.amazonaws.com/nodejs-k8s-app:latest
+        ports:
+        - containerPort: 3000
